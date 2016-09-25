@@ -1,1 +1,1 @@
-hello world
+python2 main.py
