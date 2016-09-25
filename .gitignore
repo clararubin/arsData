@@ -1,1 +1,2 @@
-questions2.csv
+*.csv
+*.pyc
