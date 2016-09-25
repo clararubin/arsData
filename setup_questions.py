@@ -1,6 +1,7 @@
 import shared as sh
 import numpy as np
 import pandas as pd
+from collections import OrderedDict
 
 def get_qs_by_time(all_questions, time):
     """
@@ -28,8 +29,9 @@ def import_questions(file_name):
         file_name : csv file containing question info.
     
     Returns:
-        questions_by_time        : contains all question data, split by time (demo/pre/post).
+        questions_by_time     : contains all question data, split by time (demo/pre/post).
         pre_post_question_ids : contains each group of corresponding pre/post question_ids.
+        questions_by_id       : dictionary that allows for accesing Question item using question_id.
     """
 
     # get dataframe from file
@@ -68,6 +70,8 @@ def import_questions(file_name):
     # group each corresponding pre/post question_id
     pre_post_question_ids = zip(pre_question_ids, post_question_ids)
 
-    return questions_by_time, pre_post_question_ids
+    questions_by_id = OrderedDict(zip(question_ids, all_questions))
+
+    return questions_by_time, pre_post_question_ids, questions_by_id
 
 

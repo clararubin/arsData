@@ -16,9 +16,9 @@ class Question:
     
     # override default String returned when calling print()
     def __str__(self):
-        return  "\nQuestion: \n\tquestion_id: {}\n\ttime: {}\n\ttopic: {}\n\tquestion_text: {}\n\tcorrect_character: {}\n\tchoices_dict: {}\n\tnum_col:{}\n\t".format(self.question_id, self.time, self.topic, self.question_text, self.correct_character, self.choices_dict, self.num_col)
+        return  "\nQuestion(\n\tquestion_id: {}\n\ttime: {}\n\ttopic: {}\n\tquestion_text: {}\n\tcorrect_character: {}\n\tchoices_dict: {}\n\tnum_col: {}\n)".format(self.question_id, self.time, self.topic, self.question_text, self.correct_character, self.choices_dict, self.num_col)
     def __repr__(self):
-        return  str(self)
+        return  "\n" + str(self)
 
 
 class QuestionSection:
@@ -36,9 +36,9 @@ class QuestionSection:
     
     # override default String returned when calling print()
     def __str__(self):
-        return  "id: {}\questions:{}".format(self.ids, self.questions)
+        return  "QuestionSection(\n\tid: {}\n\tquestions:{})".format(self.ids, self.questions)
     def __repr__(self):
-        return  str(self)
+        return  "\n" + str(self)
 
 
 
